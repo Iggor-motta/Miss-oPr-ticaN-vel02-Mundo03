@@ -6,7 +6,7 @@ INCREMENT BY 1;
 CREATE TABLE Pessoa(
   idPessoa INTEGER NOT NULL,
   nome VARCHAR(255),
-  cpf VARCHAR(11) NOT NULL,
+  cpf VARCHAR(18) NOT NULL,
   endereco VARCHAR(255),
   cidade VARCHAR(255),
   estado CHAR(2),
@@ -26,7 +26,7 @@ CREATE TABLE PessoaFisica(
 
 CREATE TABLE PessoaJuridica(
   FK_Pessoa_idPessoa INTEGER NOT NULL,
-  cnpj VARCHAR(14) NOT NULL,
+  cnpj VARCHAR(18) NOT NULL,
   CONSTRAINT PK_PessoaJuridica PRIMARY KEY CLUSTERED(FK_Pessoa_idPessoa ASC),
   CONSTRAINT FK_Pessoa_PessoaJuridica FOREIGN KEY(FK_Pessoa_idPessoa) REFERENCES Pessoa(idPessoa)
     ON UPDATE CASCADE
